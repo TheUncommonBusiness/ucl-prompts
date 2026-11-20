@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompts · UCL Live Austin</title>
+<meta name="description" content="The prompts from Just Because AI Can Doesn’t Mean You Should at UCL Live Austin. Open one, copy it and paste it into Claude.">
+<meta property="og:title" content="Prompts · UCL Live Austin">
+<meta property="og:description" content="Open a prompt, copy it and paste it into Claude.">
+<meta name="theme-color" content="#23392F">
+<link rel="icon" href="data:,">
+<style>
+:root{--dk:#23392F;--ink:#192520;--cr:#FDFFF2;--li:#F0FE91;--sg:#9EAF9F;--mu:#5E7566;--tint:#F1F5EA;--line:#C9D3C4;--edge:#4A6558;--soft:#D7E2D6;--body:#2E4237;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--dk);color:var(--cr);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow-wrap:break-word}
+.wrap{max-width:800px;margin:0 auto;padding:16px 16px 56px}
+h1,h2,.mark{font-family:Georgia,Cambria,"Times New Roman",serif;font-weight:400}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;padding-bottom:14px;border-bottom:1px solid var(--edge)}
+.mark{font-size:19px;color:var(--cr)}
+.mark b{font-weight:400;color:var(--li)}
+.cap{font-size:13px;line-height:1.3;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.top .cap{color:var(--li)}
+h1{font-size:clamp(34px,9vw,58px);line-height:1.08;letter-spacing:-.01em;margin:32px 0 16px}
+h1 em{color:var(--li)}
+.lede{font-size:19px;color:var(--soft);margin:0 0 10px;max-width:34em}
+.by{font-size:15px;color:var(--sg);margin:0}
+.how{background:var(--ink);border:1px solid var(--edge);border-radius:16px;padding:20px 20px 8px;margin:32px 0}
+.how h2{font-size:24px;line-height:1.2;margin:0 0 8px}
+.how ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.how li{counter-increment:s;display:grid;grid-template-columns:32px 1fr;gap:10px;padding:12px 0;border-top:1px solid var(--body);color:var(--soft)}
+.how li::before{content:counter(s);font-family:Georgia,serif;font-size:24px;line-height:1.1;color:var(--li)}
+.how strong{color:var(--cr)}
+.card{background:var(--cr);color:var(--ink);border-radius:16px;margin:0 0 16px}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 44px;gap:14px;align-items:center;padding:20px;border-radius:16px}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:3px solid var(--li);outline-offset:3px}
+summary .cap{color:var(--mu)}
+summary h2{font-size:27px;line-height:1.15;margin:6px 0;color:var(--ink)}
+.does{display:block;font-size:16px;color:var(--body)}
+.chev{width:44px;height:44px;border-radius:50%;background:var(--dk);position:relative}
+.chev::after{content:"";position:absolute;left:16px;top:13px;width:9px;height:9px;border:solid var(--cr);border-width:0 3px 3px 0;transform:rotate(45deg)}
+details[open] .chev::after{top:18px;transform:rotate(-135deg)}
+.in{padding:0 20px 20px}
+.in .cap{color:var(--mu);margin:4px 0 6px}
+.in ul{margin:0 0 16px;padding-left:20px}
+.in li{margin:4px 0}
+.time{margin:0 0 4px;font-weight:600}
+.time span{display:inline-block;background:var(--li);border-radius:999px;padding:2px 10px;margin-right:6px}
+.bar{position:sticky;top:0;z-index:1;background:var(--cr);padding:12px 0}
+.copy{display:block;width:100%;min-height:52px;padding:0 24px;border:0;border-radius:999px;background:var(--dk);color:var(--cr);font:inherit;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.copy.ok{background:var(--li);color:var(--ink);box-shadow:inset 0 0 0 2px var(--dk)}
+.copy:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+pre{margin:0;background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:16px;font:15.5px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.lines{list-style:none;margin:0;padding:0}
+.lines li{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center;padding:14px 0;border-top:1px solid var(--line);margin:0}
+.lines .cap{grid-column:1/-1;margin:0}
+.ln{margin:0;font-family:Georgia,Cambria,"Times New Roman",serif;font-size:19px;line-height:1.4;border-left:4px solid var(--dk);padding-left:12px}
+.lines .copy{width:auto;min-height:44px;padding:0 18px;font-size:15px}
+.note{font-size:15px;color:var(--mu);margin:8px 0 0}
+.foot{margin-top:32px;padding-top:16px;border-top:1px solid var(--edge);color:var(--sg);font-size:15px}
+.foot p{margin:0 0 6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (min-width:640px){
+body{font-size:18px}
+.wrap{padding:24px 32px 72px}
+h1{margin-top:48px}
+summary{padding:24px 28px}
+summary h2{font-size:30px}
+.in{padding:0 28px 28px}
+.bar{display:flex;justify-content:flex-end}
+.copy{width:auto}
+pre{padding:20px 22px;font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+<span class="mark">The <b>(Un)</b>common Business</span>
+<span class="cap">UCL Live Austin</span>
+</header>
+
+<h1>Just Because AI <em>Can</em> Doesn’t Mean You <em>Should</em></h1>
+<p class="lede">These are the prompts from our session. Tap one to open it, hit Copy, and paste it into Claude.</p>
+<p class="by">Callan Faulkner, Kinsey Machos and Carter Jensen</p>
+
+<section class="how" aria-labelledby="how">
+<h2 id="how">How to use it</h2>
+<ol>
+<li><span>Open Claude and pick your <strong>strongest model</strong> with <strong>extended thinking</strong> on.</span></li>
+<li><span>Check which account each connector uses. It should be your work Slack and work email, not a personal inbox or a community Slack.</span></li>
+<li><span>In Claude chat, turn on <strong>chat search</strong> so it can see your history.</span></li>
+<li><span>Paste the prompt and fill in the <strong>[brackets]</strong>.</span></li>
+</ol>
+</section>
+
+<main>
+<!--
+  HOW TO ADD A PROMPT
+  1. Copy one whole card, from its "CARD START" line to its "CARD END" line.
+  2. Paste it after the last card (above "CARDS END").
+  3. Change the id, the number, the name, the "does" line, the bullets and the time.
+  4. Put the prompt between <pre id="..."> and </pre>, starting right after the > with no blank line.
+     The button's data-copy must match the <pre> id.
+  5. In the prompt text, write &lt; for < and &amp; for &. Everything else pastes as is.
+  6. Only the first card has "open". Leave it off new cards.
+-->
+
+<!-- ===== CARD START: 1. The Mirror ===== -->
+<details class="card" id="mirror" open>
+<summary>
+<span>
+<span class="cap">Prompt 1</span>
+<h2>The Mirror</h2>
+<span class="does">Looks back at everything you made with AI in the last 30 days, checks whether each thing got used, and gives you a plan for the next 7 days.</span>
+</span>
+<span class="chev" aria-hidden="true"></span>
+</summary>
+<div class="in">
+<p class="cap">What you get</p>
+<ul>
+<li>Your funnel: what you made, what went somewhere and what moved something forward</li>
+<li>Your top random acts of AI, with dates and proof</li>
+<li>A plan for your next 7 days, with drafts of any messages you need to send</li>
+</ul>
+<p class="time"><span>About 20 minutes</span>Start it early and let it run.</p>
+<div class="bar"><button class="copy" type="button" data-copy="p-mirror">Copy prompt</button></div>
+<pre id="p-mirror">THE MIRROR
+
+I've been building with AI for months: artifacts, docs, SOPs, playbooks, dashboards, skills, plans, new ideas. It feels productive. I'm not sure it is. I can't tell, because I made all of it. You can see the whole pile at once.
+
+What matters most to me right now: [one or more things]
+
+Go slowly. Work through this one step at a time, and treat every item like a grain of rice: look at each one on its own before you judge it.
+
+Step 1. Build the inventory. List everything I've made with AI in the last 30 days that you can see here: our past chats and projects, my files and folders, my skills, anything published. Leave nothing out. Count one thing per purpose: drafts and versions of the same thing count once, and note how many versions there were. For each one, note what it is, the type and the date it was made. Show me the count and your counting rule before you go on.
+Step 2. Before you search, check which account or workspace each connected tool is tied to. If it isn't the one my team and clients use, like a personal inbox or a community Slack, tell me and look for the right one. Then follow each item, one at a time. Search my connected tools (meeting transcripts, Slack, Notion, Drive, email, CRM) for any sign it came up again: a mention, a reply, an edit, a link, a decision. Write down what you found, with the source and date, or "nothing found."
+Step 3. Give each item one verdict: never went anywhere, shared then silence, made twice, became truth without review, came up again, or moved something forward. If something is too new to judge, say so.
+Step 4. Check your work. Go back through every "never went anywhere" and "shared then silence" verdict and search once more with different words. Change the verdict if you find something.
+Step 5. Find the pattern. Compare the items that moved something forward with the rest. What do the wins have in common? What do the misses have in common? How much of the pile served what matters most to me?
+Step 6. If something would change the plan and you can't work it out yourself, ask me up to three questions with the AskUserQuestion tool.
+Step 7. Write the Mirror: the funnel (made, went somewhere, came up again, moved something forward), my random acts of AI with dates and proof, the duplicates, the pattern, and what I built instead of what matters most.
+Step 8. Write my next 7 days: up to three focuses with reasons, what I'm not doing this week from my own pile, what to archive or merge, where the truth lives for anything with copies, a check I can run again in 7 days, and drafts of any messages I need to send.
+Step 9. Read every word before you show me, and cut anything I can't act on. Show me one screen of short bullets: the funnel, my top random acts of AI, and what to do this week. Keep the full list with dates and proof ready, and show it when I ask.
+
+A few things I need you to hold to:
+- Every number is something you counted, and tell me what you counted it from. I'm going to say these numbers out loud in a room.
+- "Never came up again" means you looked and found nothing. Don't say nobody read something, because you can't see who opened what.
+- First names only. Leave out anything about clients, health, money or staff that I wouldn't want on a screen.
+- If you can't see my history or a connector, tell me what's missing and ask me to paste a list. Don't guess.
+- Write in plain words.
+
+End with this share card for the room. Numbers only, nothing that names a person, client or project:
+
+MY MIRROR · last 30 days
+Made with AI: __
+Went somewhere: __
+Came up again: __
+Moved something forward: __
+My most common random act of AI: __ (a type, like "dashboard")</pre>
+</div>
+</details>
+<!-- ===== CARD END: 1. The Mirror ===== -->
+
+<!-- ===== CARD START: 2. The Filter ===== -->
+<details class="card" id="filter">
+<summary>
+<span>
+<span class="cap">Prompt 2</span>
+<h2>The Filter</h2>
+<span class="does">A rule you paste into your Claude instructions so Claude asks 4 questions before it builds anything.</span>
+</span>
+<span class="chev" aria-hidden="true"></span>
+</summary>
+<div class="in">
+<p class="cap">What you get</p>
+<ul>
+<li>Claude stops and asks before it builds an app, SOP, dashboard or skill</li>
+<li>It pushes back when you can’t say why the thing should exist</li>
+<li>A reminder to read every word before your team treats it as truth</li>
+</ul>
+<p class="time"><span>About 2 minutes</span>Paste it into your CLAUDE.md, project instructions or Cowork.</p>
+<div class="bar"><button class="copy" type="button" data-copy="p-filter">Copy prompt</button></div>
+<pre id="p-filter">Before you build anything for me or my team (an app, dashboard, SOP, playbook, skill, artifact or new offer), ask me:
+- What happens today without it, and who feels the pain?
+- Who owns it, and where does its truth live?
+- Should it exist at all?
+- What should a person do here, and what should AI do?
+
+If I can’t answer the third question, push back and don’t build it. Build the simplest version that does the job, and remind me to read every word before it’s saved where my team treats it as truth.</pre>
+</div>
+</details>
+<!-- ===== CARD END: 2. The Filter ===== -->
+
+<!-- ===== CARD START: 3. The 5 lines ===== -->
+<!-- This card is a list. "Copy all 5" copies every .ln line, numbered. Each line also has its own Copy button. -->
+<details class="card" id="five-lines">
+<summary>
+<span>
+<span class="cap">Prompt 3</span>
+<h2>The 5 lines to tell Claude</h2>
+<span class="does">One line for each secret. Say it when you start a build, or keep all 5 in your instructions.</span>
+</span>
+<span class="chev" aria-hidden="true"></span>
+</summary>
+<div class="in">
+<p class="cap">What you get</p>
+<ul>
+<li>One line each for the Filter, the Brief, the Truth, the Borrow and the Grain of rice</li>
+<li>Copy one line, or all 5 at once</li>
+<li>Short enough to say to Claude at the start of any build</li>
+</ul>
+<p class="time"><span>Under a minute</span>Use them every time you build.</p>
+<div class="bar"><button class="copy" type="button" data-list="l-five">Copy all 5</button></div>
+<ol class="lines" id="l-five">
+<li><span class="cap">1 · Filter</span><p class="ln" id="l1">Before you build anything for me, ask me these 4 questions. If I can’t say why it should exist, don’t build it.</p><button class="copy" type="button" data-copy="l1" aria-label="Copy line 1">Copy</button></li>
+<li><span class="cap">2 · Brief</span><p class="ln" id="l2">Interview me first. Write a one-page brief and wait for my OK before you build.</p><button class="copy" type="button" data-copy="l2" aria-label="Copy line 2">Copy</button></li>
+<li><span class="cap">3 · Truth</span><p class="ln" id="l3">Ask me where the truth for this lives. It can’t live in the artifact. Flag anything that makes a second copy.</p><button class="copy" type="button" data-copy="l3" aria-label="Copy line 3">Copy</button></li>
+<li><span class="cap">4 · Borrow</span><p class="ln" id="l4">Research how the best show this, give me 5 versions to react to, then build the simplest one a person can take in.</p><button class="copy" type="button" data-copy="l4" aria-label="Copy line 4">Copy</button></li>
+<li><span class="cap">5 · Grain of rice</span><p class="ln" id="l5">Walk me through every section and make me justify it. Then ask where it gets saved: scratch, mine or the department. The department needs an approval.</p><button class="copy" type="button" data-copy="l5" aria-label="Copy line 5">Copy</button></li>
+</ol>
+<p class="note">Line 1 points to the 4 questions in The Filter, so paste The Filter too.</p>
+</div>
+</details>
+<!-- ===== CARD END: 3. The 5 lines ===== -->
+
+<!-- ===== CARDS END ===== -->
+</main>
+
+<footer class="foot">
+<p>The (Un)common Business at UCL Live Austin, November 2026.</p>
+<p>We’ll add more prompts here after the event.</p>
+</footer>
+<p class="sr" id="live" aria-live="polite"></p>
+</div>
+<script>
+(function(){
+var live=document.getElementById('live');
+function text(b){
+var id=b.getAttribute('data-copy');
+if(id)return document.getElementById(id).textContent;
+var l=document.getElementById(b.getAttribute('data-list')).querySelectorAll('.ln'),o=[];
+for(var i=0;i<l.length;i++)o.push((i+1)+'. '+l[i].textContent);
+return o.join('\n');
+}
+function flash(b,m){
+if(!b.getAttribute('data-label'))b.setAttribute('data-label',b.textContent);
+b.textContent=m;b.classList.add('ok');live.textContent=m;
+clearTimeout(b.t);b.t=setTimeout(function(){b.textContent=b.getAttribute('data-label');b.classList.remove('ok');live.textContent=''},2000);
+}
+function fallback(b,t){
+var a=document.createElement('textarea'),ok=false;
+a.value=t;a.setAttribute('readonly','');a.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0';
+document.body.appendChild(a);a.focus();a.select();a.setSelectionRange(0,t.length);
+try{ok=document.execCommand('copy')}catch(e){}
+document.body.removeChild(a);
+if(ok)return flash(b,'Copied');
+var el=document.getElementById(b.getAttribute('data-copy')||b.getAttribute('data-list')),r=document.createRange(),s=window.getSelection();
+r.selectNodeContents(el);s.removeAllRanges();s.addRange(r);
+flash(b,'Selected. Copy it now');
+}
+document.addEventListener('click',function(e){
+var b=e.target.closest&&e.target.closest('.copy');if(!b)return;
+var t=text(b);
+if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(function(){flash(b,'Copied')},function(){fallback(b,t)});
+else fallback(b,t);
+});
+var h=location.hash.slice(1),d=h&&document.getElementById(h);
+if(d&&d.tagName==='DETAILS')d.open=true;
+})();
+</script>
+</body>
+</html>

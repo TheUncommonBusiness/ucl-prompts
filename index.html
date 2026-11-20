@@ -99,9 +99,9 @@ pre{padding:20px 22px;font-size:16px}
 <li><span>Copy the Mirror below.</span></li>
 <li><span>Open Claude. Pick Sonnet 5.5 with thinking on high.</span></li>
 <li><span>Check each connector uses your work account. Your work Slack and work email, not a personal inbox or a community Slack.</span></li>
-<li><span>Send it, then answer its first few questions.</span></li>
+<li><span>Send it, then pick your priorities when it asks.</span></li>
 </ol>
-<p class="after">In Claude chat, turn on chat search first. It takes about 20 minutes, so start it early and let it run. If it asks you a question, answer it and let it keep going.</p>
+<p class="after">In Claude chat, turn on chat search first. It’s built to take about 5 minutes, and it asks you one question about your priorities before it runs.</p>
 </section>
 
 <main>
@@ -122,7 +122,7 @@ pre{padding:20px 22px;font-size:16px}
 <span class="t">
 <span class="cap">Prompt 1</span>
 <h2>The Mirror</h2>
-<span class="does">Looks back at everything you made with AI in the last 30 days, checks whether each thing got used, and gives you a plan for the next 7 days.</span>
+<span class="does">Looks back at everything you made with AI in the last 30 days and shows you how much of it went anywhere, where your time went, and what to stop.</span>
 </span>
 <button class="copy head" type="button" data-copy="p-mirror" aria-label="Copy The Mirror prompt">Copy prompt</button>
 <span class="chev" aria-hidden="true"></span>
@@ -130,61 +130,48 @@ pre{padding:20px 22px;font-size:16px}
 <div class="in">
 <p class="cap">What you get</p>
 <ul>
-<li>Your funnel: what you made, what went somewhere and what moved something forward</li>
-<li>Your top random acts of AI, with dates and proof</li>
-<li>A plan for your next 7 days, with drafts of any messages you need to send</li>
+<li>Where your time went, measured against the priorities you pick</li>
+<li>The exact projects and topics to stop, pause or archive, by name and date</li>
+<li>A share card with your numbers for the room</li>
 </ul>
-<p class="time"><span>About 20 minutes</span>on Sonnet 5.5, so start it early.</p>
+<p class="time"><span>About 5 minutes</span>on Sonnet 5.5.</p>
 <div class="bar"><button class="copy" type="button" data-copy="p-mirror">Copy prompt</button></div>
 <pre id="p-mirror">THE MIRROR
 
-I've been building with AI for months: artifacts, docs, SOPs, playbooks, dashboards, skills, plans, new ideas. It feels productive. I'm not sure it is. I can't tell, because I made all of it. You can see the whole pile at once.
+Give me a five-minute audit of everything I've made with AI in the last 30 days: how much of it went anywhere, and what I keep making that goes nowhere. Skip any plan and keep it short.
 
-Work through this one step at a time, and judge every item on its own, like a grain of rice. Be thorough in how you judge and light in how you read: names, dates and search snippets are enough. Never open a whole transcript or document to look for a mention.
+Start by finding what looks like my top priorities right now from whatever you can see quickly: our recent chats and projects, any instructions or notes you have for me, and the titles of my recent meetings if you can see them. Keep it to a handful of searches. Then ask me one question with the AskUserQuestion tool, or in one short message if you don't have it: offer up to four priorities you found, each with a short line on where you saw it, and let me pick one or more or write my own. If you can't find enough to suggest, just ask what matters most. After that, don't ask me anything else until you're done.
 
-Step 1. Find what matters most to me right now. Take a quick look at where my priorities are written down: goals, quarterly rocks, plans, the main files of my business brain, and the summaries of my recent meetings. Skim titles and summaries only, and keep it to a handful of searches. Pick out up to four things that look like they matter most right now, with one short line each on what you saw.
+Look only at what you can see quickly: our past chats, projects and artifacts, any files you can reach, and anything published. Work from names, dates and when things were last changed. Don't open documents, transcripts or code.
 
-Step 2. Ask me everything at once. Use the AskUserQuestion tool if you have it. If not, ask in one short message.
-- What matters most to me right now? Offer what you found, let me pick one or more, and let me write my own. If you couldn't find enough to suggest, just ask.
-- Where do I make things with AI? Offer what you can see connected, plus places people often build that you might not see: other AI chats like ChatGPT or Gemini, app builders like Replit, Lovable or Bolt, and design tools like Canva or Gamma.
-- Where does my team talk about work (chat, email, meetings)?
-- Where does finished work live or go out to people?
-Search only the places I pick. Skip every other connected tool, and always skip a personal inbox, a community Slack or a client's workspace. Check that each place I pick is connected to my work account or workspace, and tell me if it isn't.
-If I pick a place you can't see, don't stop. Give me two choices: paste a quick list of what I made there in the last 30 days (names are enough), or skip it for now. If I skip it, keep going without it. Never ask me to connect or install anything during this run, and never ask about the same place twice. Note every place you couldn't check.
+For proof that something went somewhere, use the quickest sign you have: it was changed or reused after the day it was made, it was shared or published, or it comes up by name in my team's chat or meeting notes. Keep it to about 15 searches, and spend them on the biggest items. If you search chat or email, use my team's workspace and skip any community Slack or personal inbox.
 
-Step 3. Build the inventory. List everything I've made with AI in the last 30 days in the places I picked, plus anything I pasted. Work from names, titles and dates, and don't open each one. Leave nothing out. Count one thing per purpose: drafts and versions of the same thing count once, and note how many versions there were. For each one, note what it is, the type and the date it was made. Show me the count and your counting rule before you go on.
+Write the result right here in the chat as clean markdown that's easy to scan: short lines, bold for the numbers that matter, no walls of text.
 
-Step 4. Look for proof that each item came up again: a mention, a reply, an edit, a link, a decision. For meetings, use titles, summaries and notes, never full transcripts. For apps and sites, use the app list, whether it was published and when it was last changed, and don't read the code. Where you can, pull one list per place for the last 30 days (meeting titles and summaries, recently edited pages) and check every item against it instead of searching one by one. Where you have to search, use the item's name plus one other word for it, and judge from the snippets. Stop at the first clear sign. Write down what you found, with the source and date, or "nothing found."
+Open with one statement, built from my own numbers, that makes me stop and think hard about where my priorities went. Make it true, and make it land.
 
-Step 5. Give each item one verdict: never went anywhere, shared then silence, made twice, became truth without review, came up again, or moved something forward. If something is too new to judge, say so.
+## Your priorities
+The priorities I picked, one line each. If the pile points to a different priority than the ones I picked, say so here.
 
-Step 6. Check the ones I'll see by name. Before you list anything as a top random act of AI, search for it once more with different words. Change the verdict if you find something.
+## Where your time went
+What I put into AI this month: how many things I made, how many went somewhere, how many served my priorities, and which types I made most. Add one line on what the things that went somewhere have in common. Then the three things I put the most time into that served none of my priorities, by name and date, with what you judged the time from (versions, chats about it, days between first and last change). Use a small table where it helps.
 
-Step 7. Find the pattern. Compare the items that moved something forward with the rest. What do the wins have in common? What do the misses have in common? How much of the pile served what matters most to me?
+## What to deprioritize
+A short list of the exact things to stop, pause or archive, each by its real title and date, with one line on why. Group repeats under their topic, like "Brand style labs (5 versions, Nov 3 to Nov 9)," so nothing hides in a count. Lead with the topic I keep coming back to that goes nowhere.
 
-Step 8. If something would change the plan and you can't work it out yourself, ask me up to three questions with the AskUserQuestion tool.
+Then the share card below, filled in with numbers only and no notes inside it. Close with one short line on what you counted from.
 
-Step 9. Write the Mirror: the funnel (made, went somewhere, came up again, moved something forward), my random acts of AI with dates and proof, the duplicates, the pattern, and what I built instead of what matters most.
-
-Step 10. Write my next 7 days: up to three focuses with reasons, what I'm not doing this week from my own pile, what to archive or merge, where the truth lives for anything with copies, a check I can run again in 7 days, and drafts of any messages I need to send.
-
-Step 11. Read every word before you show me, and cut anything I can't act on. Show me one screen of short bullets: the funnel, my top random acts of AI, and what to do this week. Keep the full list with dates and proof ready, and show it when I ask.
-
-A few things I need you to hold to:
-- Every number is something you counted, and tell me what you counted it from. I'm going to say these numbers out loud in a room.
-- "Never came up again" means you looked and found nothing. Don't say nobody read something, because you can't see who opened what.
-- First names only. Leave out anything about clients, health, money or staff that I wouldn't want on a screen.
-- If you can't see my history or a place I named, tell me what's missing next to your numbers, offer to take a pasted list, and keep going if I skip it. Don't guess.
-- Keep it to about 60 searches in all. If you reach that, stop searching, mark anything you didn't get to as "not checked," and finish with what you have.
-- Write in plain words.
-
-End with this share card for the room. Numbers only, nothing that names a person, client or project:
+Hold to these:
+- Be ruthless. Name what went nowhere, with dates, and don't soften it to spare my feelings.
+- Every number is something you counted.
+- "Went nowhere" only means you found no sign. You can't see who read what.
+- If you can't see something, say what's missing in one line and keep going.
 
 MY MIRROR · last 30 days
 Made with AI: __
 Went somewhere: __
-Came up again: __
-Moved something forward: __
+Served my priorities: __ of __
+Made twice: __
 My most common random act of AI: __ (a type, like "dashboard")</pre>
 </div>
 </details>

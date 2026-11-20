@@ -121,9 +121,9 @@ pre{padding:20px 22px;font-size:16px}
 <li><span>Copy the Mirror below.</span></li>
 <li><span>Open Claude. Pick Sonnet 5.5 with thinking on high.</span></li>
 <li><span>Check each connector uses your work account. Your work Slack and work email, not a personal inbox or a community Slack.</span></li>
-<li><span>Send it, then pick your priorities when it asks.</span></li>
+<li><span>Send it, then answer its three quick questions about where your business is going.</span></li>
 </ol>
-<p class="after">In Claude chat, turn on chat search first. It’s built to take about 5 minutes, and it asks you one question about your priorities before it runs.</p>
+<p class="after">In Claude chat, turn on chat search first. It asks you three quick questions about where your business is going, then takes about 5 minutes.</p>
 </section>
 
 <main>
@@ -144,7 +144,7 @@ pre{padding:20px 22px;font-size:16px}
 <span class="t">
 <span class="cap">Prompt 1</span>
 <h2>The Mirror</h2>
-<span class="does">Looks back at everything you made with AI in the last 30 days and shows you how much of it went anywhere, where your time went, and what to stop.</span>
+<span class="does">Looks back at everything you made with AI in the last 30 days, measures it against where you want your business to go, and tells you what to do next.</span>
 </span>
 <button class="copy head" type="button" data-copy="p-mirror" aria-label="Copy The Mirror prompt">Copy prompt</button>
 <span class="chev" aria-hidden="true"></span>
@@ -152,39 +152,55 @@ pre{padding:20px 22px;font-size:16px}
 <div class="in">
 <p class="cap">What you get</p>
 <ul>
-<li>Where your time went, measured against the priorities you pick</li>
-<li>The exact projects and topics to stop, pause or archive, by name and date</li>
-<li>A share card with your numbers for the room</li>
+<li>Where your time went, measured against your 12-month goal</li>
+<li>Your next 3 moves, each with a first step you can take today</li>
+<li>The exact things to stop, plus a share card with your numbers for the room</li>
 </ul>
 <p class="time"><span>About 5 minutes</span>on Sonnet 5.5.</p>
 <div class="bar"><button class="copy" type="button" data-copy="p-mirror">Copy prompt</button></div>
 <pre id="p-mirror">THE MIRROR
 
-Give me a five-minute audit of everything I've made with AI in the last 30 days: how much of it went anywhere, and what I keep making that goes nowhere. Skip any plan and keep it short.
+Audit the last 30 days of my work with AI against where I'm trying to take my business. Show me how much of what I made went anywhere, how much of it served my real goals, and what to do next. Keep it short and specific to me.
 
-Start by finding what looks like my top priorities right now from whatever you can see quickly: our recent chats and projects, any instructions or notes you have for me, and the titles of my recent meetings if you can see them. Keep it to a handful of searches. Then ask me one question with the AskUserQuestion tool, or in one short message if you don't have it: offer up to four priorities you found, each with a short line on where you saw it, and let me pick one or more or write my own. If you can't find enough to suggest, just ask what matters most. After that, don't ask me anything else until you're done.
+Start by zooming me out. Take a quick look at what you can see (our recent chats and projects, any instructions or notes you have for me, the titles of my recent meetings) so you can offer smart options. Keep that to a handful of searches. Then ask me these three questions one at a time, and wait for my answer before you ask the next one. Use the AskUserQuestion tool if you have it, or a short message if you don't. Let me pick more than one answer or write my own, and build each question's options from what you saw and what I've already told you.
+1. Where do you want the business to be 12 months from now?
+2. What's the biggest thing standing in the way of that?
+3. What has to happen in the next 30 days to move it?
+My answers are the yardstick for everything after this. Once I've answered the third question, don't ask me anything else until you're done.
 
 Look only at what you can see quickly: our past chats, projects and artifacts, any files you can reach, and anything published. Work from names, dates and when things were last changed. Don't open documents, transcripts or code.
 
 For proof that something went somewhere, use the quickest sign you have: it was changed or reused after the day it was made, it was shared or published, or it comes up by name in my team's chat or meeting notes. Keep it to about 15 searches, and spend them on the biggest items. If you search chat or email, use my team's workspace and skip any community Slack or personal inbox.
 
+Judge every item against my three answers. It served my goal only if it moved the 12-month goal, worked on the thing in the way, or pushed the 30-day focus. Everything else was time spent somewhere else, however good it looks.
+
 Write the result right here in the chat as clean markdown that's easy to scan: short lines, bold for the numbers that matter, no walls of text.
 
-Open with one statement, built from my own numbers, that makes me stop and think hard about where my priorities went. Make it true, and make it land.
+Open with one statement, built from my own numbers and measured against my 12-month goal, that makes me stop and think hard about where my time is going. Make it true, and make it land.
 
-## Your priorities
-The priorities I picked, one line each. If the pile points to a different priority than the ones I picked, say so here.
+## Where you said you're going
+My 12-month goal, the thing in the way, and my 30-day focus, one line each. If the pile shows I'm working toward something else, say so here.
+
+## You might not have noticed
+Up to three patterns in my pile that I probably haven't seen, each with the evidence: names, numbers and dates. Skip anything obvious.
+
+## Your next 3 moves
+Three specific moves, each built on a real item, topic or goal from my answers and my pile. A move can be to finish something half-built that serves the goal, merge duplicates and say which one survives, repeat what made my wins work, start on a goal that got almost none of my time, or hand something off. At least one move has to work on the thing in the way. For each move, give the evidence behind it and one first step I can take today in under 15 minutes.
+
+## What to stop
+The exact things to stop, pause or archive, each by its real title and date, with one line on why. Group repeats under their topic, like "Brand style labs (5 versions, Nov 3 to Nov 9)," so nothing hides in a count. Lead with the topic I keep coming back to that serves none of my answers.
 
 ## Where your time went
-What I put into AI this month: how many things I made, how many went somewhere, how many served my priorities, and which types I made most. Add one line on what the things that went somewhere have in common. Then the three things I put the most time into that served none of my priorities, by name and date, with what you judged the time from (versions, chats about it, days between first and last change). Use a small table where it helps.
+A small table: how many things I made, how many went somewhere, how many served my goal, how many I made twice, and which types I made most. Then the three things I put the most time into that served none of my answers, by name and date, with what you judged the time from (versions, chats about it, days between first and last change).
 
-## What to deprioritize
-A short list of the exact things to stop, pause or archive, each by its real title and date, with one line on why. Group repeats under their topic, like "Brand style labs (5 versions, Nov 3 to Nov 9)," so nothing hides in a count. Lead with the topic I keep coming back to that goes nowhere.
+## Your rule for next month
+One rule, drawn from my own pattern, written so I can paste it straight into my Claude instructions.
 
 Then the share card below, filled in with numbers only and no notes inside it. Close with one short line on what you counted from.
 
 Hold to these:
 - Be ruthless. Name what went nowhere, with dates, and don't soften it to spare my feelings.
+- Every insight and every move names something real from my answers or my pile. Nothing that would fit anyone, like "focus on your priorities" or "use AI less."
 - Every number is something you counted.
 - "Went nowhere" only means you found no sign. You can't see who read what.
 - If you can't see something, say what's missing in one line and keep going.
@@ -192,7 +208,7 @@ Hold to these:
 MY MIRROR · last 30 days
 Made with AI: __
 Went somewhere: __
-Served my priorities: __ of __
+Served my 12-month goal: __ of __
 Made twice: __
 My most common random act of AI: __ (a type, like "dashboard")</pre>
 </div>

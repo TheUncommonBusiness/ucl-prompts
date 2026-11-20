@@ -31,6 +31,8 @@ h1 em{color:var(--li)}
 .how li{counter-increment:s;display:grid;grid-template-columns:32px 1fr;gap:10px;padding:12px 0;border-top:1px solid var(--body);color:var(--soft)}
 .how li::before{content:counter(s);font-family:Georgia,serif;font-size:24px;line-height:1.1;color:var(--li)}
 .how strong{color:var(--cr)}
+.where{margin:0 0 14px;color:var(--soft)}
+.where .cap{display:block;color:var(--li);margin-bottom:4px}
 .card{background:var(--cr);color:var(--ink);border-radius:16px;margin:0 0 16px}
 summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 44px;gap:14px;align-items:center;padding:20px;border-radius:16px}
 summary::-webkit-details-marker{display:none}
@@ -88,8 +90,9 @@ pre{padding:20px 22px;font-size:16px}
 
 <section class="how" aria-labelledby="how">
 <h2 id="how">How to use it</h2>
+<p class="where"><span class="cap">Where to run it</span>Claude Cowork on top of your business brain is best. Next best is Cowork in a workspace or project. Claude chat works too, with chat search turned on.</p>
 <ol>
-<li><span>Open Claude and pick your <strong>strongest model</strong> with <strong>extended thinking</strong> on.</span></li>
+<li><span>Open Claude and pick <strong>Sonnet 5.5</strong> with <strong>thinking on high</strong>.</span></li>
 <li><span>Check which account each connector uses. It should be your work Slack and work email, not a personal inbox or a community Slack.</span></li>
 <li><span>In Claude chat, turn on <strong>chat search</strong> so it can see your history.</span></li>
 <li><span>Paste the prompt and fill in the <strong>[brackets]</strong>.</span></li>
@@ -125,7 +128,7 @@ pre{padding:20px 22px;font-size:16px}
 <li>Your top random acts of AI, with dates and proof</li>
 <li>A plan for your next 7 days, with drafts of any messages you need to send</li>
 </ul>
-<p class="time"><span>About 20 minutes</span>Start it early and let it run.</p>
+<p class="time"><span>About 20 minutes</span>on Sonnet 5.5, so start it early.</p>
 <div class="bar"><button class="copy" type="button" data-copy="p-mirror">Copy prompt</button></div>
 <pre id="p-mirror">THE MIRROR
 
@@ -164,35 +167,34 @@ My most common random act of AI: __ (a type, like "dashboard")</pre>
 </details>
 <!-- ===== CARD END: 1. The Mirror ===== -->
 
-<!-- ===== CARD START: 2. The Filter ===== -->
-<details class="card" id="filter">
+<!-- ===== CARD START: 2. The 5 secrets ===== -->
+<details class="card" id="secrets">
 <summary>
 <span>
 <span class="cap">Prompt 2</span>
-<h2>The Filter</h2>
-<span class="does">A rule you paste into your Claude instructions so Claude asks 4 questions before it builds anything.</span>
+<h2>The 5 secrets</h2>
+<span class="does">One rule you paste into your Claude instructions so it asks before it builds anything.</span>
 </span>
 <span class="chev" aria-hidden="true"></span>
 </summary>
 <div class="in">
 <p class="cap">What you get</p>
 <ul>
-<li>Claude stops and asks before it builds an app, SOP, dashboard or skill</li>
-<li>It pushes back when you can’t say why the thing should exist</li>
-<li>A reminder to read every word before your team treats it as truth</li>
+<li>Claude asks what problem you’re solving before it builds an app, SOP, dashboard or skill</li>
+<li>A one-page plan you OK before anything gets built</li>
+<li>A walk through every section before your team treats it as truth</li>
 </ul>
 <p class="time"><span>About 2 minutes</span>Paste it into your CLAUDE.md, project instructions or Cowork.</p>
-<div class="bar"><button class="copy" type="button" data-copy="p-filter">Copy prompt</button></div>
-<pre id="p-filter">Before you build anything for me or my team (an app, dashboard, SOP, playbook, skill, artifact or new offer), ask me:
-- What happens today without it, and who feels the pain?
-- Who owns it, and where does its truth live?
-- Should it exist at all?
-- What should a person do here, and what should AI do?
-
-If I can’t answer the third question, push back and don’t build it. Build the simplest version that does the job, and remind me to read every word before it’s saved where my team treats it as truth.</pre>
+<div class="bar"><button class="copy" type="button" data-copy="p-secrets">Copy prompt</button></div>
+<pre id="p-secrets">Before you build anything for me or my team (an app, dashboard, SOP, playbook, skill, artifact or new offer):
+- Ask what problem we’re solving and whether it’s necessary. No reason, no build.
+- Interview me and write a one-page plan. Wait for my OK.
+- Ask where the truth for this lives. It can’t live in what you build.
+- Show me how the best do it, give me a few versions, and build the simplest.
+- Walk me through every section before it’s saved where my team treats it as truth.</pre>
 </div>
 </details>
-<!-- ===== CARD END: 2. The Filter ===== -->
+<!-- ===== CARD END: 2. The 5 secrets ===== -->
 
 <!-- ===== CARD START: 3. The 5 lines ===== -->
 <!-- This card is a list. "Copy all 5" copies every .ln line, numbered. Each line also has its own Copy button. -->
@@ -208,20 +210,19 @@ If I can’t answer the third question, push back and don’t build it. Build th
 <div class="in">
 <p class="cap">What you get</p>
 <ul>
-<li>One line each for the Filter, the Brief, the Truth, the Borrow and the Grain of rice</li>
+<li>One line each for Earn it, Plan, Truth, Borrow and Grain of rice</li>
 <li>Copy one line, or all 5 at once</li>
 <li>Short enough to say to Claude at the start of any build</li>
 </ul>
 <p class="time"><span>Under a minute</span>Use them every time you build.</p>
 <div class="bar"><button class="copy" type="button" data-list="l-five">Copy all 5</button></div>
 <ol class="lines" id="l-five">
-<li><span class="cap">1 · Filter</span><p class="ln" id="l1">Before you build anything for me, ask me these 4 questions. If I can’t say why it should exist, don’t build it.</p><button class="copy" type="button" data-copy="l1" aria-label="Copy line 1">Copy</button></li>
-<li><span class="cap">2 · Brief</span><p class="ln" id="l2">Interview me first. Write a one-page brief and wait for my OK before you build.</p><button class="copy" type="button" data-copy="l2" aria-label="Copy line 2">Copy</button></li>
+<li><span class="cap">1 · Earn it</span><p class="ln" id="l1">Before you build anything, ask me what problem we’re solving and whether it’s necessary. If I don’t have a reason, don’t build it.</p><button class="copy" type="button" data-copy="l1" aria-label="Copy line 1">Copy</button></li>
+<li><span class="cap">2 · Plan</span><p class="ln" id="l2">Interview me first. Write a one-page brief and wait for my OK before you build.</p><button class="copy" type="button" data-copy="l2" aria-label="Copy line 2">Copy</button></li>
 <li><span class="cap">3 · Truth</span><p class="ln" id="l3">Ask me where the truth for this lives. It can’t live in the artifact. Flag anything that makes a second copy.</p><button class="copy" type="button" data-copy="l3" aria-label="Copy line 3">Copy</button></li>
 <li><span class="cap">4 · Borrow</span><p class="ln" id="l4">Research how the best show this, give me 5 versions to react to, then build the simplest one a person can take in.</p><button class="copy" type="button" data-copy="l4" aria-label="Copy line 4">Copy</button></li>
 <li><span class="cap">5 · Grain of rice</span><p class="ln" id="l5">Walk me through every section and make me justify it. Then ask where it gets saved: scratch, mine or the department. The department needs an approval.</p><button class="copy" type="button" data-copy="l5" aria-label="Copy line 5">Copy</button></li>
 </ol>
-<p class="note">Line 1 points to the 4 questions in The Filter, so paste The Filter too.</p>
 </div>
 </details>
 <!-- ===== CARD END: 3. The 5 lines ===== -->

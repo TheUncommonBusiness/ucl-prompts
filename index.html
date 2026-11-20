@@ -63,6 +63,23 @@ pre{margin:0;background:var(--tint);border:1px solid var(--line);border-radius:1
 .ln{margin:0;font-family:Georgia,Cambria,"Times New Roman",serif;font-size:19px;line-height:1.4;border-left:4px solid var(--dk);padding-left:12px}
 .lines .copy{width:auto;min-width:5.5em;min-height:44px;padding:0 18px;font-size:15px}
 .note{font-size:15px;color:var(--mu);margin:8px 0 0}
+.card.util{background:var(--ink);color:var(--cr);box-shadow:inset 0 0 0 1.5px var(--edge)}
+.card.util summary{padding:16px 20px}
+.card.util summary .cap{color:var(--li)}
+.card.util summary h2{font-size:22px;color:var(--cr)}
+.card.util .does{font-size:15px;color:var(--soft)}
+.card.util .chev{background:var(--body)}
+.card.util .copy{background:var(--li);color:var(--ink)}
+.card.util .copy.ok{background:var(--cr);box-shadow:none}
+.card.util .copy:focus-visible{outline-color:var(--li)}
+.card.util .copy.head{background:transparent;color:var(--li);box-shadow:inset 0 0 0 2px var(--li)}
+.card.util .copy.head.ok{background:var(--li);color:var(--ink)}
+.card.util .in .cap{color:var(--sg)}
+.card.util .time span{color:var(--ink)}
+.card.util .bar{background:var(--ink)}
+.card.util .lines li{border-top-color:var(--body)}
+.card.util .ln{font-size:17px;color:var(--cr);border-left-color:var(--li)}
+.card.util .note{color:var(--sg)}
 .foot{margin-top:32px;padding-top:16px;border-top:1px solid var(--edge);color:var(--sg);font-size:15px}
 .foot p{margin:0 0 6px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -73,6 +90,8 @@ h1{margin-top:48px}
 summary{padding:24px 28px;grid-template-columns:1fr auto 44px;grid-template-areas:"t b c"}
 .copy.head{justify-self:end}
 summary h2{font-size:30px}
+.card.util summary{padding:18px 24px}
+.card.util summary h2{font-size:24px}
 .in{padding:0 28px 28px}
 .bar{display:flex;justify-content:flex-end}
 .copy{width:auto;min-width:9.5em}
@@ -181,11 +200,11 @@ My most common random act of AI: __ (a type, like "dashboard")</pre>
 <details class="card" id="secrets">
 <summary>
 <span class="t">
-<span class="cap">Prompt 2</span>
+<span class="cap">Instructions</span>
 <h2>The 5 secrets</h2>
 <span class="does">One rule you paste into your Claude instructions so it asks before it builds anything.</span>
 </span>
-<button class="copy head" type="button" data-copy="p-secrets" aria-label="Copy The 5 secrets prompt">Copy prompt</button>
+<button class="copy head" type="button" data-copy="p-secrets" aria-label="Copy The 5 secrets instructions">Copy instructions</button>
 <span class="chev" aria-hidden="true"></span>
 </summary>
 <div class="in">
@@ -196,7 +215,7 @@ My most common random act of AI: __ (a type, like "dashboard")</pre>
 <li>A walk through every section before your team treats it as truth</li>
 </ul>
 <p class="time"><span>About 2 minutes</span>Paste it into your CLAUDE.md, project instructions or Cowork.</p>
-<div class="bar"><button class="copy" type="button" data-copy="p-secrets">Copy prompt</button></div>
+<div class="bar"><button class="copy" type="button" data-copy="p-secrets">Copy instructions</button></div>
 <pre id="p-secrets">Before you build anything for me or my team (an app, dashboard, SOP, playbook, skill, artifact or new offer):
 - Ask what pain this is causing, what it costs my business, and which of my top goals fixing it would move. If it moves none, say so before we build.
 - Interview me one question at a time and write a one-page plan. Open it with one line on the pain it solves, then the must-haves, what’s out of scope, and what done looks like. Wait for my OK.
@@ -210,14 +229,14 @@ If this will take more than an hour of my time, ask whether it’s the best use 
 
 <!-- ===== CARD START: 3. The 5 lines ===== -->
 <!-- This card is a list. "Copy all 5" copies every .ln line, numbered. Each line also has its own Copy button. -->
-<details class="card" id="five-lines">
+<details class="card util" id="five-lines">
 <summary>
 <span class="t">
-<span class="cap">Prompt 3</span>
+<span class="cap">Quick lines</span>
 <h2>The 5 lines to tell Claude</h2>
 <span class="does">One line for each secret. Say it when you start a build, or keep all 5 in your instructions.</span>
 </span>
-<button class="copy head" type="button" data-list="l-five" aria-label="Copy all 5 lines">Copy prompt</button>
+<button class="copy head" type="button" data-list="l-five" aria-label="Copy all 5 lines">Copy all 5</button>
 <span class="chev" aria-hidden="true"></span>
 </summary>
 <div class="in">

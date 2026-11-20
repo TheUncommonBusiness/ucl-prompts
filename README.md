@@ -11,7 +11,7 @@ The whole site is `index.html`. It has no fonts to download, no images, no analy
 1. Open `index.html` and find the last card. Each card starts with a `CARD START` comment and ends with a `CARD END` comment.
 2. Copy one whole card, from `CARD START` to `CARD END`, and paste it after the last card (above `CARDS END`).
 3. Change the `id`, the "Prompt" number, the name, the one line under the name, the "What you get" bullets and the time.
-4. Paste the prompt between `<pre id="...">` and `</pre>`. Start the text right after the `>` with no blank line, and make the Copy button's `data-copy` match the `<pre>` id.
+4. Paste the prompt between `<pre id="...">` and `</pre>`. Start the text right after the `>` with no blank line. Each card has two Copy buttons, one in the header (`<summary>`) and one inside the card, and both need `data-copy` to match the `<pre>` id.
 5. In the prompt text, write `&lt;` for `<` and `&amp;` for `&`. Everything else can stay as is.
 6. Leave `open` off new cards. Only The Mirror starts open.
 

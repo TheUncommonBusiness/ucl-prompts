@@ -34,13 +34,14 @@ h1 em{color:var(--li)}
 .where{margin:0 0 6px;color:var(--soft)}
 .after{margin:0 0 12px;padding-top:12px;border-top:1px solid var(--body);color:var(--soft)}
 .card{background:var(--cr);color:var(--ink);border-radius:16px;margin:0 0 16px}
-summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 44px;gap:14px;align-items:center;padding:20px;border-radius:16px}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 44px;grid-template-areas:"t c" "b b";gap:12px 14px;align-items:center;padding:20px;border-radius:16px}
+summary .t{grid-area:t}
 summary::-webkit-details-marker{display:none}
 summary:focus-visible{outline:3px solid var(--li);outline-offset:3px}
 summary .cap{color:var(--mu)}
 summary h2{font-size:27px;line-height:1.15;margin:6px 0;color:var(--ink)}
 .does{display:block;font-size:16px;color:var(--body)}
-.chev{width:44px;height:44px;border-radius:50%;background:var(--dk);position:relative}
+.chev{grid-area:c;width:44px;height:44px;border-radius:50%;background:var(--dk);position:relative}
 .chev::after{content:"";position:absolute;left:16px;top:13px;width:9px;height:9px;border:solid var(--cr);border-width:0 3px 3px 0;transform:rotate(45deg)}
 details[open] .chev::after{top:18px;transform:rotate(-135deg)}
 .in{padding:0 20px 20px}
@@ -53,12 +54,14 @@ details[open] .chev::after{top:18px;transform:rotate(-135deg)}
 .copy{display:block;width:100%;min-height:52px;padding:0 24px;border:0;border-radius:999px;background:var(--dk);color:var(--cr);font:inherit;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .copy.ok{background:var(--li);color:var(--ink);box-shadow:inset 0 0 0 2px var(--dk)}
 .copy:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.copy.head{grid-area:b;justify-self:start;width:auto;min-width:9.5em;min-height:44px;padding:0 18px;background:transparent;color:var(--dk);box-shadow:inset 0 0 0 2px var(--dk);font-size:16px}
+.copy.head.ok{background:var(--li);color:var(--ink)}
 pre{margin:0;background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:16px;font:15.5px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
 .lines{list-style:none;margin:0;padding:0}
 .lines li{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center;padding:14px 0;border-top:1px solid var(--line);margin:0}
 .lines .cap{grid-column:1/-1;margin:0}
 .ln{margin:0;font-family:Georgia,Cambria,"Times New Roman",serif;font-size:19px;line-height:1.4;border-left:4px solid var(--dk);padding-left:12px}
-.lines .copy{width:auto;min-height:44px;padding:0 18px;font-size:15px}
+.lines .copy{width:auto;min-width:5.5em;min-height:44px;padding:0 18px;font-size:15px}
 .note{font-size:15px;color:var(--mu);margin:8px 0 0}
 .foot{margin-top:32px;padding-top:16px;border-top:1px solid var(--edge);color:var(--sg);font-size:15px}
 .foot p{margin:0 0 6px}
@@ -67,11 +70,12 @@ pre{margin:0;background:var(--tint);border:1px solid var(--line);border-radius:1
 body{font-size:18px}
 .wrap{padding:24px 32px 72px}
 h1{margin-top:48px}
-summary{padding:24px 28px}
+summary{padding:24px 28px;grid-template-columns:1fr auto 44px;grid-template-areas:"t b c"}
+.copy.head{justify-self:end}
 summary h2{font-size:30px}
 .in{padding:0 28px 28px}
 .bar{display:flex;justify-content:flex-end}
-.copy{width:auto}
+.copy{width:auto;min-width:9.5em}
 pre{padding:20px 22px;font-size:16px}
 }
 </style>
@@ -107,7 +111,7 @@ pre{padding:20px 22px;font-size:16px}
   2. Paste it after the last card (above "CARDS END").
   3. Change the id, the number, the name, the "does" line, the bullets and the time.
   4. Put the prompt between <pre id="..."> and </pre>, starting right after the > with no blank line.
-     The button's data-copy must match the <pre> id.
+     Both Copy buttons (the one in <summary> and the one inside the card) need data-copy to match the <pre> id.
   5. In the prompt text, write &lt; for < and &amp; for &. Everything else pastes as is.
   6. Only the first card has "open". Leave it off new cards.
 -->
@@ -115,11 +119,12 @@ pre{padding:20px 22px;font-size:16px}
 <!-- ===== CARD START: 1. The Mirror ===== -->
 <details class="card" id="mirror" open>
 <summary>
-<span>
+<span class="t">
 <span class="cap">Prompt 1</span>
 <h2>The Mirror</h2>
 <span class="does">Looks back at everything you made with AI in the last 30 days, checks whether each thing got used, and gives you a plan for the next 7 days.</span>
 </span>
+<button class="copy head" type="button" data-copy="p-mirror" aria-label="Copy The Mirror prompt">Copy prompt</button>
 <span class="chev" aria-hidden="true"></span>
 </summary>
 <div class="in">
@@ -171,11 +176,12 @@ My most common random act of AI: __ (a type, like "dashboard")</pre>
 <!-- ===== CARD START: 2. The 5 secrets ===== -->
 <details class="card" id="secrets">
 <summary>
-<span>
+<span class="t">
 <span class="cap">Prompt 2</span>
 <h2>The 5 secrets</h2>
 <span class="does">One rule you paste into your Claude instructions so it asks before it builds anything.</span>
 </span>
+<button class="copy head" type="button" data-copy="p-secrets" aria-label="Copy The 5 secrets prompt">Copy prompt</button>
 <span class="chev" aria-hidden="true"></span>
 </summary>
 <div class="in">
@@ -201,11 +207,12 @@ My most common random act of AI: __ (a type, like "dashboard")</pre>
 <!-- This card is a list. "Copy all 5" copies every .ln line, numbered. Each line also has its own Copy button. -->
 <details class="card" id="five-lines">
 <summary>
-<span>
+<span class="t">
 <span class="cap">Prompt 3</span>
 <h2>The 5 lines to tell Claude</h2>
 <span class="does">One line for each secret. Say it when you start a build, or keep all 5 in your instructions.</span>
 </span>
+<button class="copy head" type="button" data-list="l-five" aria-label="Copy all 5 lines">Copy prompt</button>
 <span class="chev" aria-hidden="true"></span>
 </summary>
 <div class="in">
@@ -259,16 +266,20 @@ document.body.appendChild(a);a.focus();a.select();a.setSelectionRange(0,t.length
 try{ok=document.execCommand('copy')}catch(e){}
 document.body.removeChild(a);
 if(ok)return flash(b,'Copied');
-var el=document.getElementById(b.getAttribute('data-copy')||b.getAttribute('data-list')),r=document.createRange(),s=window.getSelection();
+var el=document.getElementById(b.getAttribute('data-copy')||b.getAttribute('data-list')),r=document.createRange(),s=window.getSelection(),dt=el.closest('details');
+if(dt&&!dt.open)dt.open=true;
 r.selectNodeContents(el);s.removeAllRanges();s.addRange(r);
 flash(b,'Selected. Copy it now');
 }
-document.addEventListener('click',function(e){
-var b=e.target.closest&&e.target.closest('.copy');if(!b)return;
-var t=text(b);
+function onCopy(e){
+e.preventDefault();e.stopPropagation();
+var b=e.currentTarget,t=text(b);
 if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(function(){flash(b,'Copied')},function(){fallback(b,t)});
 else fallback(b,t);
-});
+}
+function noToggle(e){if(e.key===' '||e.key==='Enter')e.preventDefault()}
+var bs=document.querySelectorAll('.copy');
+for(var i=0;i<bs.length;i++){bs[i].addEventListener('click',onCopy);bs[i].addEventListener('keyup',noToggle)}
 var h=location.hash.slice(1),d=h&&document.getElementById(h);
 if(d&&d.tagName==='DETAILS')d.open=true;
 })();
